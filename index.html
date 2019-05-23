@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <title>API Deom</title>
+</head>
+<body>
+    <input type="text" id="name" onchange="updateName()">
+    <div id="greet"></div>
+</body>
+<script type="text/javascript">
+    function updateName() {
+        const name = document.getElementById("name").value
+        fetch('https://pzctxwdmia.execute-api.us-east-1.amazonaws.com/dev/hello/'+name)
+          .then(res => res.json())
+          .then(txt => {document.getElementById('greet').innerHTML = txt.data.name})
+    }
+</script>
+</html>
