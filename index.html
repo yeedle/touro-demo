@@ -11,7 +11,7 @@
         const name = document.getElementById("name").value
         fetch('https://pzctxwdmia.execute-api.us-east-1.amazonaws.com/dev/hello/'+name)
           .then(res => res.json())
-          .then(txt => {document.getElementById('greet').innerHTML = txt.data.name})
+          .then(json=> {document.getElementById('greet').innerHTML = json.data.name})
     }
 </script>
 </html>
